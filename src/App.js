@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AddItem from './AddItem.js';
 import DeleteItem from './DeleteItem.js';
+import ItemList from './ItemList.js';
 
 class App extends React.Component {
   state = {
@@ -36,10 +37,7 @@ class App extends React.Component {
 
         <DeleteItem onDeleteLastItem={this.deleteLastItem} onNoItemsFound={this.noItemsFound()} />
 
-        <p className="items">Items</p>
-        <ol className="item-list">
-          {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
-        </ol>
+        <ItemList items={this.state.items} />
       </div>
     );
   }
